@@ -6,7 +6,7 @@ import Dashboard from './Dashboard';
 const Index = () => {
   const navigate = useNavigate();
   
-  // Redirect to the main dashboard
+  // Redirect to the landing page
   useEffect(() => {
     navigate('/', { replace: true });
   }, [navigate]);

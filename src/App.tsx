@@ -11,6 +11,7 @@ import Tools from "@/pages/Tools";
 import MCPRepository from "@/pages/MCPRepository";
 import AIIntelligence from "@/pages/AIIntelligence";
 import NotFound from "@/pages/NotFound";
+import LandingPage from "@/pages/LandingPage";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/dashboard" element={
             <AppLayout>
               <Dashboard />
             </AppLayout>
