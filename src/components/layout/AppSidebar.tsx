@@ -24,7 +24,8 @@ const navItems = [
 ];
 
 const AppSidebar: React.FC = () => {
-  const { collapsed } = useSidebar();
+  const { state } = useSidebar();
+  const collapsed = state === "collapsed";
   const location = useLocation();
   const currentPath = location.pathname;
   
@@ -44,11 +45,11 @@ const AppSidebar: React.FC = () => {
   return (
     <Sidebar
       className={`border-r transition-all duration-300 ${collapsed ? 'w-[70px]' : 'w-64'}`}
-      collapsible
+      collapsible="icon"
     >
       <SidebarTrigger className="m-2 self-end" />
       <SidebarContent className="pt-2">
-        <SidebarGroup defaultOpen>
+        <SidebarGroup>
           <SidebarGroupLabel className={collapsed ? 'sr-only' : ''}>
             Navigation
           </SidebarGroupLabel>
